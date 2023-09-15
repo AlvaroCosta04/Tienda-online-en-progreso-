@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styleIndex.css">
+    </head>
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/home}">Inicio</a></li>
+                <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                <li><a th:href="@{/cart/}">Carrito</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <main>
+            <section class="product-list">
+                <h1>Carrito</h1>
+
+                <div th:if="${succes != null}" class="succes" role="succes">
+                    <span th:text="${succes}"></span>
+                    <form method="post" th:action="@{/cart/add-item(itemID=${itemID})}">
+                        <input type="hidden" name="from" value="/cart/">
+                        <button>Volver a añadir</button>
+                    </form>
+                </div>
+
+                <div class="product-row">
+                    <div th:each="clothes : ${clothes}" class="product">
+
+                        <form method="post" th:action="@{/cart/delete-item(itemID=${clothes.id})}">
+                            <input type="hidden" name="from" value="/cart/">
+                            <button>Eliminar del Carrito</button>
+                        </form>
+
+                        <div class="product-image">
+                            <div class="image-container">
+                                <img th:if="${clothes.images.size() > 0}" th:src="${clothes.images[0].imageUrl}" alt="Imagen" class="image">
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h2 th:text="${clothes.productName}"></h2>
+                            <p th:text="${clothes.description}"></p>
+                            <p>Precio: <span th:text="${clothes.price}"></span></p>
+                            <a th:href="@{/catalogue/product-details-} + ${clothes.id}">
+                                <button>Ver Detalles</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </body>
+</html>

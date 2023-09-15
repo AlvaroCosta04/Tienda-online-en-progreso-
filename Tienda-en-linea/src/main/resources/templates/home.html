@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styleIndex.css">
+        <title>Tienda en Línea</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                    <li><a th:href="@{/cart/}">Carrito</a></li>
+                    <li><a th:href="@{/history/}">Historial de compra</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="featured-products">
+                <h1>Prendas Destacadas</h1>
+
+                <section class="cltohes">         
+
+                    <section class="section1">
+                        <div>
+                            <h3>Bolsos y mochilas</h3>
+                            <img src="../images/bolso.png">
+                        </div>
+                        <div>
+                            <h3>Accsesorios superiores</h3>
+                            <img src="../images/gorro.png">
+                        </div>
+
+                    </section>
+                    <br>       
+                    <section class="section2">
+                        <div>
+                            <h3>Abrigos</h3>
+                            <img src="../images/abrigo.png">
+                        </div>
+                        <div>
+                            <h3>Remeras</h3>
+                            <img src="../images/remera.webp">
+                        </div>
+                        <div>
+                            <h3>Pantalones</h3>
+                            <img src="../images/pantalon.png">
+                        </div>
+                    </section>
+                    <br>
+                    <section class="section1">                  
+                        <div>
+                            <h3>Zapatos</h3>
+                            <img src="../images/zapatos.png">
+                        </div>
+                        <div>
+                            <h3>Zapatillas</h3>
+                            <img src="../images/zapatillas.png">
+                        </div>
+                    </section>
+                </section>
+
+                <div class="degraded"></div>
+                <p>jfsadcvnLAWKFSJZVOWÑerlsdjgvñoarsld</p>
+                <section class="container"> 
+                    <h2>Prendas por género</h2>
+                    <section class="categoria_container">       
+                        <h3>Categoria Femenino</h3>
+                        <section class="categorias_women">
+                            <img src="../images/Abrigos.jpg">
+                            <img src="../images/pantalones.jpg">
+                            <img src="../images/mujer casual.jpg">
+                            <img src="../images/Deportivo.jpg">
+                            <img src="../images/Elegante.jpg">
+                        </section>
+                    </section>
+
+                    <section class="categoria_container">
+                        <section class="categorias_men">
+                            <img src="../images/abrigo masc.jpg">
+                            <img src="../images/pantalones masc.jpg">
+                            <img src="../images/Casual.jpg">
+                            <img src="../images/deportivo masc.jpg">
+                            <img src="../images/accesorio masc.jpg">
+                        </section>
+                        <h3>Categoria Masculino</h3>
+                    </section>
+                </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+    </body>
+</html>

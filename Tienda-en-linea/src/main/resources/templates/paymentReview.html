@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/purchasingProcess.css">
+        <title>Revisión del Pedido</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Carrito</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="order-review">
+                <h1>Revisión del Pedido</h1>
+
+                <!-- Itera a través de la lista de clothes y muestra la información de cada ropa -->
+                <div th:each="clothing : ${clothes}">
+                    <div class="clothing-item">
+                        <h2 th:text="${clothing.productName}"></h2>
+                        <p th:text="${clothing.description}"></p>
+                        <p th:text="${clothing.price}"></p>
+                        <!-- Puedes mostrar más detalles de la ropa aquí según tus necesidades -->
+                    </div>
+                </div>
+
+                <form method="post" action="/checkout/paymentReviewPost">
+                     <th:block th:each="id : ${ids}">
+                        <input type="hidden" th:name="'ids'" th:value="${id}">
+                    </th:block>
+                    <button class="button" type="submit">¡COMPRAR!</button>
+                </form>
+
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+
+    </body>
+</html>
+

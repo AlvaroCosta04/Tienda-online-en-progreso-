@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/purchasingProcess.css">
+        <title>Información de Envío</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Carrito</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="shipping-info">
+                <h1>Información de Envío</h1>
+
+                <ul>
+                    <li th:each="id : ${ids}">ID de Producto: <span th:text="${id}"></span></li>
+                </ul>
+
+
+                <!-- Verifica si ya existe una dirección guardada -->
+                <div th:if="${savedAddress != null}">
+                    <h2>Dirección Guardada:</h2>
+                    <p th:text="${savedAddress.streetAndNumber + ', ' + savedAddress.city + ', ' + savedAddress.country}"></p>
+                    <p th:text="${savedAddress.postalCode}"></p>
+                </div>
+
+                <!-- Formulario para ingresar/modificar la dirección -->
+                <form method="post" th:action="@{/checkout/shipping}">
+
+                    <th:block th:each="id : ${ids}">
+                        <input type="hidden" th:name="'ids'" th:value="${id}">
+                    </th:block>
+
+                    <label for="streetAndNumber">Calle y Número:</label>
+                    <input type="text" id="streetAndNumber" name="streetAndNumber" th:value="${streetAndNumber}" required>
+
+                    <label for="city">Ciudad:</label>
+                    <input type="text" id="city" name="city" th:value="${city}" required>
+
+                    <label for="country">País:</label>
+                    <input type="text" id="country" name="country" th:value="${country}" required>
+
+                    <label for="postalCode">Código Postal:</label>
+                    <input type="text" id="postalCode" name="postalCode" th:value="${postalCode}" required>
+
+                    <button type="submit">Guardar y Continuar</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+    </body>
+</html>
+

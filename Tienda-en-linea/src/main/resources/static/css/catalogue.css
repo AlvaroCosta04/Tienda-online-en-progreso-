@@ -1,0 +1,86 @@
+/*
+body {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.product-list {
+    text-align: center;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    flex: 0 0 calc(27% - 40px);
+    margin: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 90%;
+    max-height: 150px; 
+}
+
+.product-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.product h2 {
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}*/
+
+

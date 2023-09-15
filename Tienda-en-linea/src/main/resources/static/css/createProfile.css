@@ -1,0 +1,246 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.create-profile {
+    text-align: center;
+    /*padding: 20px;*/
+}
+
+.create-profile form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.create-profile label {
+    display: block;
+    margin-top: 10px;
+}
+
+.create-profile input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.create-profile textarea {
+    resize: none;
+    /*white-space: pre-wrap;*/
+    height: 100px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.create-profile button {
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 20px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.login {
+    text-align: center;
+    padding: 20px;
+}
+
+.login form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.login label {
+    display: block;
+    margin-top: 10px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.login button {
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 20px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.login p {
+    margin-top: 20px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f44336;
+    color: white;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.code-input {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.code-boxes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.code-box {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 20px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color:  #333;
+    margin: 20px 0;
+}
+
+.form_imageinput{
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.form_imageinput input[type="file"] button{
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 20px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form_imageinput img{
+   max-width: 290px;
+   height: auto;
+   border-radius: 50%;
+   margin-bottom: 12px;
+}
+
+/* Agrega esto en tu archivo CSS existente o en un nuevo archivo */
+
+/* Estilo del botón en el input de tipo archivo */
+.custom-file-button {
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 20px;
+    cursor: pointer;
+}
+
+/* Oculta el input de tipo archivo para que solo se vea el botón personalizado */
+.custom-file-input {
+    display: none;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

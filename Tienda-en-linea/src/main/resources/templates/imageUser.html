@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario de Crear Cuenta</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/createProfile.css">
+        <script src="https://cdn.jsdelivr.net/npm/compressorjs@1.1.0/dist/compressor.min.js"></script>
+        <script src="../js/createAccount.js"></script>
+    </head> 
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <!--<li><a href="#">Catálogo</a></li>
+                <li><a href="#">Perfil</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <form th:action="@{/signup-post/user}" 
+              method="POST"
+              enctype="multipart/form-data"
+              class="form_imageinput">
+
+            <h3>¡Añade una imagen a tu perfíl!</h3>
+            <div class="line"></div>
+
+            <div id="previsualizacion">
+                <img src="http://cdn.onlinewebfonts.com/svg/img_464447.png" 
+                     alt="Imagen predeterminada">
+            </div> 
+
+            <!--<input 
+                type="file" 
+                class="imageFile"
+                name="imageFile" 
+                onchange="previsualizarImagen(event)">-->
+            <!-- Agrega esto donde quieras que aparezca el botón personalizado -->
+            <!-- Agrega esto donde quieras que aparezca el botón personalizado -->
+            <label class="custom-file-button">
+                Seleccionar imagen
+                <input type="file" class="custom-file-input" name="imageFile" onchange="previsualizarImagen(event)">
+            </label>
+
+
+            <p>"Ten en cuenta que luego podrás editar la foto de perfil cuando quieras".</p>
+
+            <!--<input type="submit" value="Omitir">-->
+            <input type="submit" value="Siguiente">
+        </form>
+
+    </body>
+
+    <footer>
+        <p>&copy; 2023 Tienda en Línea</p>
+    </footer>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styleIndex.css">
+        <title>Catálogo de Productos</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a th:href="@{/cart/}">Carrito</a></li>
+                    <li><a th:href="@{/history/}">Historial de compra</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="product-list">
+                <h1>Catálogo de Productos</h1>
+                <div class="product-row">
+                    <div th:each="clothes : ${clothes}" class="product">
+                        <div class="product-image">
+                            <div class="image-container">
+                                <img th:if="${clothes.images.size() > 0}" th:src="${clothes.images[0].imageUrl}" alt="Imagen" class="image">
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h2 th:text="${clothes.productName}"></h2>
+                            <p th:text="${clothes.description}"></p>
+                            <p>Precio: <span th:text="${clothes.price}"></span></p>
+                            <a th:href="@{/catalogue/product-details-} + ${clothes.id}">
+                                <button>Ver Detalles</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+    </body>
+</html>
+

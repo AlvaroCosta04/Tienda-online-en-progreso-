@@ -1,0 +1,47 @@
+/* Estilos generales (igual que en los ejemplos anteriores) */
+
+/* Estilos de la sección de detalle del producto */
+.product-detail {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 300px; /* Ajusta la altura máxima de la imagen */
+}
+
+.product-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.product h1 {
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product select {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+/*.product button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}*/

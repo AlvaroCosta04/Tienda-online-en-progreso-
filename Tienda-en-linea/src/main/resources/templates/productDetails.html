@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styleIndex.css">
+        <title>Detalle del Producto</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                    <li><a th:href="@{/cart/}">Carrito</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div th:if="${succes != null}" class="succes" role="succes">
+                <span th:text="${succes}"></span>
+            </div>
+            <section class="product-detail">
+                <div class="product-image">
+                    <img th:src="${clothes.images[0].imageUrl}" alt="Imagen del producto">
+                </div>
+                <div class="product-info">
+                    <h1 th:text="${clothes.productName}"></h1>
+                    <p th:text="${clothes.description}"></p>
+                    <p id="price">Precio: <span th:text="${clothes.price}"></span></p>
+                    <p>Stock disponible: <span th:text="${clothes.stockQuantity}"></span></p>
+                    <p>Color:</p>
+                    <select>
+                        <option th:each="color : ${clothes.colors}" 
+                                th:value="${color.colorName}" 
+                                th:text="${color.colorName}"></option>
+                    </select>
+                    <br>
+                    <br>
+                    <a th:href="@{/checkout/shipping(ids=${idClothes})}">
+                        <button>Comprar</button>
+                    </a>
+
+                    <!--<a th:href="@{/cart/add-item(itemID=${idClothes})}">
+                        <button>Agregar al Carrito</button>
+                    </a>-->
+
+                    <div th:unless="${cart}">
+                        <form method="post" th:action="@{/cart/add-item(itemID=${idClothes})}">
+                            <input type="hidden" name="from" th:value="'/catalogue/product-details-' + ${idClothes}">
+                            <button>Agregar al Carrito</button>
+                        </form>
+                    </div>
+
+                    <div th:if="${cart}">
+                        <form method="post" th:action="@{/cart/delete-item(itemID=${idClothes})}">
+                            <input type="hidden" name="from" th:value="'/catalogue/product-details-' + ${idClothes}">
+                            <button>Eliminar del Carrito</button>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+    </body>
+</html>
+

@@ -1,0 +1,393 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Estilos de la sección de productos destacados */
+/*.featured-products {
+    text-align: center;
+}
+
+.product {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.product h2 {
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}*/
+
+.clothes{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.degraded{
+    /*height: 65px;
+    background-image: linear-gradient(to bottom, rgb(21, 21, 21),   #fff);*/
+    margin-top: 80px;
+    margin-bottom: 0%;
+}
+
+.container{
+    margin-top: 0%;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    margin-top: 0;
+    text-align: center; 
+}
+
+.categoria_container{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+
+.categoria_container h2 {
+   margin-bottom: 10px;
+
+}
+
+.categoria_container h3 {
+    margin-right: 200px;
+    margin: 0 auto;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.categorias_women{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    width: 700px;
+    height: 430px; 
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 15px; 
+}
+
+.categorias_women img{
+    width:0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .9;
+    transition: .5s ease;
+}
+
+.categorias_women img:hover{
+width: 175px;
+opacity: 1;
+filter: contrast(105%);
+cursor: pointer;
+}
+
+
+.categorias_men{
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    width: 700px;
+    height: 430px; 
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.categorias_men h3 {
+    justify-content: flex-end;
+    margin-right: 200px;
+}
+
+.categorias_men img{
+ width:0;
+ flex-grow: 1;
+ object-fit: cover;
+ opacity: .9;
+ transition: .5s ease;
+}
+
+.categorias_men img:hover{
+ width: 175px;
+ opacity: 1;
+ filter: contrast(105%);
+ cursor: pointer;
+ }
+
+.section1 {
+    width: 70%;
+    gap: 10px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.section1 div {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: auto;
+    width: 400px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: .3s ease;
+}
+
+.section1 div h3 {
+    margin: 0;
+}
+
+.section1 div img {
+    width: auto;
+    height: 125px; 
+    min-width: auto;
+    min-height: 125px;
+    max-width: 237.5px; 
+}
+
+.section1 div:hover {
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 430px;
+}
+
+.section2 {
+    width: 80%;
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.section2 div {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 25px auto;
+    width: 320px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: .3s ease;
+}
+
+.section2 div h3 {
+    margin: 0;
+}
+
+.section2 div img {
+    width: auto;
+    height: 125px; 
+    min-width: auto;
+    min-height: 125px; 
+    max-width: 237.5px; 
+}
+
+.section2 div:hover {
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 344px;
+}
+
+/*.section2 div {
+    display: flex;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 25px auto;
+    width: 250px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.section2 div img {
+    width: auto;
+    height: 125px; 
+    min-width: auto;
+    min-height: 125px; 
+    max-width: 237.5px; 
+}*/
+
+/*catalogo*/
+
+.product-list {
+    text-align: center;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    flex: 0 0 calc(27% - 40px); /* Ajusta el ancho según tus necesidades */
+    margin: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 90%;
+    max-height: 150px;
+}
+
+.product-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.product h2 {
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/*detalle de producto*/
+
+.product-detail {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    min-height: 320px;
+}
+
+.product-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+.product-info h1{
+    font-size: 32px;
+}
+
+.product h1 {
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product select {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.product-info button {
+   background-color: #fff;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.6);
+    border-radius: 16px;
+    padding: 6px 15px;
+    cursor: pointer;
+}
+
+#price{
+    font-size: 24px;
+}
+
+/*footer*/
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
