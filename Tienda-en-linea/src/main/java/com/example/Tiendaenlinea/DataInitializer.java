@@ -3,6 +3,7 @@ package com.example.Tiendaenlinea;
 import com.example.Tiendaenlinea.entities.Category;
 import com.example.Tiendaenlinea.entities.Clothes;
 import com.example.Tiendaenlinea.entities.Color;
+import com.example.Tiendaenlinea.entities.Image;
 import com.example.Tiendaenlinea.entities.ImageData;
 import com.example.Tiendaenlinea.entities.Size;
 import com.example.Tiendaenlinea.repositories.CategoryRepository;
@@ -100,12 +101,12 @@ public class DataInitializer implements CommandLineRunner {
             selectedSizes.add(sizes.get(random.nextInt(sizes.size())));
             clothes.setSizes(selectedSizes);
 
-            List<ImageData> images = new ArrayList<>();
-            images.add(new ImageData("url1", null));
-            images.add(new ImageData("url2", null));
-            images.add(new ImageData("url3", null));
-            images.add(new ImageData("url4", null));
-            clothes.setImages(images);
+            ArrayList<Integer> image_id = new ArrayList<>(5);
+            image_id.add(1000);
+            image_id.add(2000);
+            image_id.add(3000);
+            image_id.add(4000);
+            clothes.setImage_id(image_id);
 
             clothes.setStockQuantity(random.nextInt(50) + 10);
             clothesRepository.save(clothes);

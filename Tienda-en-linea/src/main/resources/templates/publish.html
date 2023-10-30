@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/createProfile.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <title>Publicar Ropa</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                    <li><a th:href="@{/cart/}">Carrito</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="create-profile">
+                <h1>Publicar Ropa</h1>
+                <!--<form method="post" th:action="/catalogue/createPost">
+                    <label for="productName">Nombre del Producto</label>
+                    <input type="text" id="productName" name="productName" required>
+
+                    <label for="description">Descripción</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <label for="price">Precio</label>
+                    <input type="number" id="price" name="price" required>
+
+                    <label for="category">Categoría</label>
+                    <select id="category" name="category" required>
+                        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.categoryName}"></option>
+                    </select>
+
+                    <label>Colores Disponibles</label>
+                    <div th:each="color : ${colors}">
+                        <div class="color-option">
+                            <label th:for="'color' + ${color.id}" th:text="${color.colorName}"></label>
+                            <input type="checkbox" th:id="'color' + ${color.id}" th:name="colors" th:value="${color.colorName}">
+                        </div>
+                    </div>
+
+                    <label>Tallas Disponibles</label>
+                    <div th:each="size : ${sizes}">
+                        <div class="size-option">
+                            <label th:for="'size' + ${size.id}" th:text="${size.sizeName}"></label>
+                            <input type="checkbox" th:id="'size' + ${size.id}" th:name="sizes" th:value="${size.sizeName}">
+                        </div>
+                    </div>
+
+                    <div class="form_imageinput">
+                        <label for="images">Cargar Imágenes</label>
+                        <input type="file" id="images" name="images[]" accept="image/*" multiple class="custom-file-input">
+                        <div id="image-preview"></div>
+                    </div>
+
+
+                    <input type="submit" value="Publicar">
+                </form>-->
+
+                <form 
+                    th:action="@{/catalogue/createPost}" 
+                    method="POST"
+                    th:object="${clothes}"
+                    enctype="multipart/form-data">
+                    <label for="productName">Nombre del Producto</label>
+                    <input type="text" id="productName" name="productName" th:field="*{productName}" required>
+
+                    <label for="description">Descripción</label>
+                    <textarea id="description" name="description" th:field="*{description}" required></textarea>
+
+                    <label for="price">Precio</label>
+                    <input type="number" id="price" name="price" th:field="*{price}" required>
+
+                    <!--<label for="category">Categoría</label>
+                    <select id="category" name="category" th:field="*{category}" required>
+                        <option th:each="category : ${categories}" th:value="${category}" th:text="${category.categoryName}"></option>
+                    </select>
+
+                    <label>Colores Disponibles</label>
+                    <div th:each="color : ${colors}">
+                        <div class="color-option">
+                            <label th:for="'color' + ${color.id}" th:text="${color.colorName}"></label>
+                            <input type="checkbox" th:id="'color' + ${color.id}" th:name="colors" th:value="${color.colorName}" th:field="*{colors}"/>
+                        </div>
+                    </div>
+
+                    <label>Tallas Disponibles</label>
+                    <div th:each="size : ${sizes}">
+                        <div class="size-option">
+                            <label th:for="'size' + ${size.id}" th:text="${size.sizeName}"></label>
+                            <input type="checkbox" th:id="'size' + ${size.id}" th:name="sizes" th:value="${size.sizeName}" th:field="*{sizes}"/>
+                        </div>
+                    </div>-->
+
+                    <label for="category">Categoría</label>
+                    <select id="category" name="category.id" required>
+                        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.categoryName}"></option>
+                    </select>
+
+                    <label>Colores Disponibles</label>
+                    <div th:each="color : ${colors}">
+                        <div class="color-option">
+                            <label th:for="'color' + ${color.id}" th:text="${color.colorName}"></label>
+                            <input type="checkbox" th:id="'color' + ${color.id}" th:field="*{colors}" th:value="${color.id}"/>
+                        </div>
+                    </div>
+
+                    <label>Tallas Disponibles</label>
+                    <div th:each="size : ${sizes}">
+                        <div class="size-option">
+                            <label th:for="'size' + ${size.id}" th:text="${size.sizeName}"></label>
+                            <input type="checkbox" th:id="'size' + ${size.id}" th:field="*{sizes}" th:value="${size.id}"/>
+                        </div>
+                    </div>
+
+                    <label for="stockQuantity">Stock</label>
+                    <input type="number" id="stockQuantity" name="stockQuantity" th:field="*{stockQuantity}" required>
+
+
+                    <!--<div class="form_imageinput">
+                        <label for="images">Cargar Imágenes</label>
+                        <input type="file" id="images" name="images" accept="image/*" multiple th:field="*{image_id}" class="custom-file-input"/>
+                        <div id="image-preview"></div>
+                    </div>-->
+
+                    <label for="images">Selecciona hasta 5 imágenes:</label>
+                    <input 
+                        type="file" 
+                        id="images" 
+                        name="images[]" 
+                        multiple>
+                    <p>(Ten en cuenta que debes mantener la tecla "Ctrl" para seleccionar mas de un archivo)</p>
+
+
+                    <input type="submit" value="Publicar">
+                </form>
+
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+
+        <script src="path/to/compressor.min.js"></script>
+        <script>
+            // Obtén el elemento de entrada de archivo y el área de vista previa
+            var input = document.getElementById('images');
+            var preview = document.getElementById('image-preview');
+
+// Escucha el evento change en el elemento de entrada de archivo
+            input.addEventListener('change', function () {
+                // Limpia cualquier contenido previo en el área de vista previa
+                preview.innerHTML = '';
+
+                // Recorre los archivos seleccionados y crea elementos de imagen para cada uno
+                for (var i = 0; i < input.files.length; i++) {
+                    var file = input.files[i];
+
+                    // Verifica que el archivo sea una imagen
+                    if (file.type.match('image.*')) {
+                        var img = document.createElement('img');
+                        img.src = URL.createObjectURL(file);
+                        img.classList.add('preview-image');
+                        preview.appendChild(img);
+                    }
+                }
+            });
+
+            document.getElementById('images').addEventListener('change', function (event) {
+                const files = event.target.files;
+
+                for (const file of files) {
+                    new Compressor(file, {
+                        quality: 0.6,
+                        maxWidth: 800,
+                        maxHeight: 600,
+                        success(result) {
+                            // `result` es la imagen comprimida
+                            const reader = new FileReader();
+                            reader.readAsDataURL(result);
+                            reader.onload = function () {
+                                const compressedImageBase64 = reader.result;
+                                // Ahora puedes mostrar o enviar `compressedImageBase64`
+                            };
+                        },
+                        error(err) {
+                            console.error(err.message);
+                        },
+                    });
+                }
+            });
+
+        </script>
+    </body>
+</html>

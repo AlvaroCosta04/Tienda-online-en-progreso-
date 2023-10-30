@@ -212,10 +212,10 @@ input[type="submit"] {
 }
 
 .form_imageinput img{
-   max-width: 290px;
-   height: auto;
-   border-radius: 50%;
-   margin-bottom: 12px;
+    max-width: 290px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 12px;
 }
 
 /* Agrega esto en tu archivo CSS existente o en un nuevo archivo */
@@ -237,6 +237,21 @@ input[type="submit"] {
     display: none;
 }
 
+.form_imageinput label:hover{
+    cursor: pointer;
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.size-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
 footer {
     background-color: #333;

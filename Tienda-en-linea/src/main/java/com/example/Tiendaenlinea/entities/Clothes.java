@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,7 +45,7 @@ public class Clothes {
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
-    protected Category category; 
+    protected Category category;
 
     @ManyToMany
     @JoinTable(
@@ -60,13 +61,12 @@ public class Clothes {
             joinColumns = @JoinColumn(name = "clothes_id"),
             inverseJoinColumns = @JoinColumn(name = "size_id")
     )
-    protected List<Size> sizes; 
+    protected List<Size> sizes;
 
-    @ElementCollection
-    protected List<ImageData> images = new ArrayList<>(5);
+    private ArrayList<Integer> image_id = new ArrayList<>(5);
 
     protected Integer stockQuantity;
 
     @OneToMany(mappedBy = "clothes")
-    protected List<OrderDetail> orderDetails; 
+    protected List<OrderDetail> orderDetails;
 }

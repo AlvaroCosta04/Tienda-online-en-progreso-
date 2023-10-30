@@ -11,5 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface ColorRepository extends JpaRepository<Color, Integer> {
     @Query("SELECT c FROM Color c WHERE c.colorName IN :colorNames")
     List<Color> findByColorNameIn(@Param("colorNames") List<String> colorNames);
+    
+    @Query("SELECT c FROM Color c")
+    List<Color> findAll();
 }
+
 

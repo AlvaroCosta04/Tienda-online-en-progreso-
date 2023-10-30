@@ -11,5 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface SizeRepository extends JpaRepository<Size, Integer> {
     @Query("SELECT s FROM Size s WHERE s.sizeName IN :sizeNames")
     List<Size> findBySizeNameIn(@Param("sizeNames") List<String> sizeNames);
+
+    @Query("SELECT s FROM Size s")
+    List<Size> findAll();
 }
+
 

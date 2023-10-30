@@ -8,7 +8,9 @@ import com.example.Tiendaenlinea.services.CartService;
 import com.example.Tiendaenlinea.services.ClothesService;
 import com.example.Tiendaenlinea.services.UserService;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -55,7 +58,7 @@ public class CartController {
         return "cart.html";
     }
 
-    @PostMapping("/add-item")
+    @PostMapping("/add-itemCart")
     public String CartAddItem(
             @RequestParam("itemID") Integer itemID,
             @RequestParam("from") String from,
@@ -83,9 +86,8 @@ public class CartController {
 
         return "redirect:" + from;
     }
-
-    @PostMapping("/delete-item")
-    public String CartDeleteItem(
+    @PostMapping("/delete-itemCart")
+    public String CartDeleteItemCart(
             @RequestParam("itemID") Integer itemID,
             @RequestParam("from") String from,
             RedirectAttributes redirectAttributes, HttpSession session) throws ServicesException {
@@ -108,6 +110,56 @@ public class CartController {
         redirectAttributes.addAttribute("succes", "Se ha eliminado el producto del carrito");
         redirectAttributes.addAttribute("itemID", itemID);
         return "redirect:" + from;
+    }
+
+    @PostMapping("/add-item")
+    @ResponseBody
+    public Map<String, Object> CartAddItem(
+            @RequestParam("itemID") Integer itemID,
+            HttpSession session) throws ServicesException {
+        Users user = (Users) session.getAttribute("userSession");
+        Map<String, Object> response = new HashMap<>();
+
+        Cart cart = cartService.findByUser(user);
+        List<Integer> productsIds = cart.getProductIds();
+
+        for (Integer productId : productsIds) {
+            if (productId.equals(itemID)) {
+                response.put("error", "Este producto ya se encuentra en su carrito");
+                return response;
+            }
+        }
+
+        productsIds.add(itemID);
+        cart.setProductIds(productsIds);
+        cartService.update(cart);
+
+        response.put("success", "Producto agregado al carrito con éxito");
+        return response;
+    }
+
+    @PostMapping("/delete-item")
+    @ResponseBody
+    public Map<String, Object> CartDeleteItem(
+            @RequestParam("itemID") Integer itemID,
+            HttpSession session) throws ServicesException {
+        Users user = (Users) session.getAttribute("userSession");
+        Map<String, Object> response = new HashMap<>();
+
+        Cart cart = cartService.findByUser(user);
+        List<Integer> productsIds = cart.getProductIds();
+        List<Integer> newProductIds = new ArrayList<>();
+
+        for (Integer productId : productsIds) {
+            if (!productId.equals(itemID)) {
+                newProductIds.add(productId);
+            }
+        }
+        cart.setProductIds(newProductIds);
+        cartService.update(cart);
+
+        response.put("success", "Producto eliminado del carrito con éxito");
+        return response;
     }
 
 }

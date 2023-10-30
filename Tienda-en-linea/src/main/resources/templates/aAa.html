@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styleIndex.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Detalle del Producto</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                    <li><a th:href="@{/cart/}">Carrito</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <p id="cart-action" th:text="${addToCart}"></p>
+
+            <!--<div th:if="${succes != null}" class="succes" role="succes">
+                <span th:text="${succes}"></span>
+            </div>-->
+            <section class="product-detail">
+
+
+                <!--<div class="slider">
+                    <div class="slides">-->
+
+
+                <div  th:each="image : ${images}">
+                    <img th:src="${'data:image/png;base64,' + image}">
+                </div>
+
+                <!--</div>
+                <a class="prev" onclick="prevSlide()"><</a>
+                <a class="next" onclick="nextSlide()">></a>
+            </div>--
+
+                <!-- <div class="product-info">
+                     <h1 th:text="${clothes.productName}"></h1>
+                     <p th:text="${clothes.description}"></p>
+                     <p id="price">Precio: <span th:text="${clothes.price}"></span></p>
+                     <p>Stock disponible: <span th:text="${clothes.stockQuantity}"></span></p>
+                     <p>Color:</p>
+                     <select>
+                         <option th:each="color : ${clothes.colors}" 
+                                 th:value="${color.colorName}" 
+                                 th:text="${color.colorName}"></option>
+                     </select>
+                     <br>
+                     <br>
+                     <a th:href="@{/checkout/shipping(ids=${idClothes})}">
+                         <button>Comprar</button>
+                     </a>
+ 
+                     <div id="add-to-cart">
+                         <form method="post" action="#" id="add-to-cart-form">
+                             <input type="hidden" name="itemID" th:value="${idClothes}">
+                             <button id="add-to-cart-button">Agregar al Carrito</button>
+                         </form>
+                     </div>
+ 
+                     <div id="remove-from-cart">
+                         <form method="post" action="#" id="remove-from-cart-form">
+                             <input type="hidden" name="itemID" th:value="${idClothes}">
+                             <button id="remove-from-cart-button">Eliminar del Carrito</button>
+                         </form>
+                     </div>
+ 
+                     <div id="message-container"></div>
+ 
+                 </div>
+ 
+                 </div>-->
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tienda en Línea</p>
+        </footer>
+
+    </body>
+</html>
+

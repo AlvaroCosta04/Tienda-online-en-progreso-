@@ -26,7 +26,7 @@
 
                 <div th:if="${succes != null}" class="succes" role="succes">
                     <span th:text="${succes}"></span>
-                    <form method="post" th:action="@{/cart/add-item(itemID=${itemID})}">
+                    <form method="post" th:action="@{/cart/add-itemCart(itemID=${itemID})}">
                         <input type="hidden" name="from" value="/cart/">
                         <button>Volver a añadir</button>
                     </form>
@@ -35,7 +35,7 @@
                 <div class="product-row">
                     <div th:each="clothes : ${clothes}" class="product">
 
-                        <form method="post" th:action="@{/cart/delete-item(itemID=${clothes.id})}">
+                        <form method="post" th:action="@{/cart/delete-itemCart(itemID=${clothes.id})}">
                             <input type="hidden" name="from" value="/cart/">
                             <button>Eliminar del Carrito</button>
                         </form>

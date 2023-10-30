@@ -14,6 +14,7 @@
             <nav>
                 <ul>
                     <li><a th:href="@{/catalogue}">Catalogo</a></li>
+                    <li><a th:href="@{/catalogue/create}">Publicar Ropa</a></li>
                     <li><a th:href="@{/cart/}">Carrito</a></li>
                     <li><a th:href="@{/history/}">Historial de compra</a></li>
                     <li><a href="#">Perfil</a></li>
@@ -22,6 +23,15 @@
         </header>
 
         <main>
+            <div th:if="${succes != null}" class="succes" role="succes">
+                <span th:text="${succes}"></span>
+            </div>
+
+            <div th:if="${error != null}" class="error" role="error">
+                <span th:text="${succes}"></span>
+            </div>
+
+
             <section class="featured-products">
                 <h1>Prendas Destacadas</h1>
 
